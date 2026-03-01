@@ -2,7 +2,8 @@ const http = require('node:http');
 
 const server = http.createServer((req, res) => {
   const { method, url } = req;
-
+  const timeStamp = new Date().toISOString();
+  console.log(`${method} ${url} ${timeStamp}`);
   if (method === 'GET' && url === '/') {
     res.writeHead(200, { 'content-type': 'text/plain'});
     res.end('Welcome to JServer!');
