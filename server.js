@@ -1,8 +1,8 @@
 const http = require('node:http');
 
-const { pathname, searchParams } = new URL(url, 'http://localhost:8080');
 const server = http.createServer((req, res) => {
   const { method, url } = req;
+  const { pathname, searchParams } = new URL(url, 'http://localhost:8080');
   const timeStamp = new Date().toISOString();
   console.log(`${method} ${url} ${timeStamp}`);
 
